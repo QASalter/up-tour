@@ -2,7 +2,7 @@ module ApplicationHelper
 require 'csv'
   def self.get_csv
     options = Selenium::WebDriver::Chrome::Options.new(args: ['headless'])
-    Selenium::WebDriver::Chrome.driver_path = ENV['GOOGLE_CHROME_BIN']
+    Selenium::WebDriver::Chrome.driver_path = ENV['GOOGLE_CHROME_SHIM']
     driver = Selenium::WebDriver.for(:chrome, options: options)
 
     url = "https://booking.ilovetour.co.uk/your-group-details.php?%2B7a%2B7JQtiWekTsKJPym01Ft3tieYQKFsHY%2BHvidNUA%2Fx%2Bn9RZQIAJvy%2B8S%2BmIf5H0eWdkjnzh3ZrUyu%2BAGH710PQMx2CR8qTez0b4NTTGDBzA0VsUTHjDT1V8lbc"
