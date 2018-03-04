@@ -1,0 +1,28 @@
+<div class="main">
+<%= link_to 'Back', root_path, class: 'btn btn-primary' %>
+
+<% @team.each do |x|%>
+  <% @count ||= 0 %>
+  <% @count = @count+1 if x.amount_left == "£PAID " %>
+<% end %>
+
+<% waiting = @team.count - @count %>
+
+<p class="text-center"> <%= "Waiting on #{waiting} to pay out of #{@team.count}"%></p>
+
+<table class="table">
+  <thead>
+    <tr class"row">
+      <th>Name</th>
+      <th>Paid</th>
+   </tr>
+ </thead>
+ <tbody>
+   <% @team.each do |team| %>
+     <tr >
+       <td><%=team.name%></td>
+       <td class="<%= if team.amount_left == "£PAID " then "paid" else "not-paid" end%>"><%=team.amount_left %></td>
+     </tr>
+   <% end %>
+ </tbody>
+</table>

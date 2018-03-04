@@ -1,0 +1,31 @@
+<div class="main">
+<script>
+jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.location = $(this).data("href");
+    });
+});
+</script>
+<table class="table">
+  <thead>
+    <tr class"row">
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Paid</th>
+      <th>Left to pay</th>
+      <th>Percentage paid</th>
+   </tr>
+ </thead>
+ <tbody>
+   <% @club.each do |club| %>
+   <% next if club.amount == 0 %>
+     <%= content_tag_for(:tr, club, 'data-href': "/clubs/#{club.id}", class: "clickable-row") do %>
+       <td><%= club.name %></td>
+       <td><%= club.amount%></td>
+       <td><%= club.paid%></td>
+       <td><%= club.amount - club.paid%></td>
+       <td><%= (club.paid/club.amount.to_f*100).round(2) rescue 'nil'%></td>
+     <% end %>
+     <% end %>
+ </tbody>
+</table>
