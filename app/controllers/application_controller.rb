@@ -3,7 +3,10 @@ class ApplicationController < ActionController::Base
   before_action :time_check
 
   def time_check
-    time = TimeCheck.find(1)
+    time = TimeCheck.where(id: 1).first_or_create do |time|
+      time.last_checked = 15.minutes.ago
+    end
+
     UpdateDbJob.perform_later if time.last_checked < 10.minutes.ago
   end
 end
