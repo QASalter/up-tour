@@ -10,7 +10,6 @@ end
 gem 'rails', '~> 5.1.4'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 
 gem 'pry'
 gem 'record_tag_helper'
