@@ -1,6 +1,6 @@
 class Club < ApplicationRecord
   has_one :team
-
+  require 'csv'
   def self.update_clubs
    clubs = ["Beach Cricket",
     "Beach Flag Football",

@@ -1,6 +1,7 @@
 class Team < ApplicationRecord
   belongs_to :club
-
+  require 'csv'
+  
   def self.update_team
    clubs_hash = {
     "Beach Cricket"                                    => 1,

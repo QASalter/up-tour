@@ -12,6 +12,7 @@ gem 'dotenv-rails', require: 'dotenv/rails-now'
 # Use sqlite3 as the database for Active Record
 
 gem 'pry'
+
 gem 'record_tag_helper'
 gem 'open_uri_redirections'
 gem 'selenium-webdriver'
