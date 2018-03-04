@@ -10,12 +10,17 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+    a {
+        color: black;
+    }
+    </style>
   </head>
 
   <body>
     <%= yield %>
     <div class="text-center">
-    <a class="text-center" href="https://www.instagram.com/okthisissam/"><i class="fas fa-camera-retro"></i> Follow</a>
+    <a class="link-col" href="https://www.instagram.com/okthisissam/"><i class="fas fa-camera-retro"></i> Follow</a>
     </div>
   </body>
 </html>
