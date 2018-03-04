@@ -1,5 +1,6 @@
 class UpdateDbJob < ApplicationJob
   queue_as :default
+  require 'CSV'
 
   def perform
     TimeCheck.where(id: 1).first_or_create do |time|

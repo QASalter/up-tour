@@ -1,5 +1,6 @@
 module ApplicationHelper
-
+  require 'CSV'
+  
   def self.get_csv
     options = Selenium::WebDriver::Chrome::Options.new(args: ['headless'])
 

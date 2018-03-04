@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.3.4'
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -11,7 +11,7 @@ gem 'rails', '~> 5.1.4'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-gem "csv"
+
 gem 'pry'
 gem 'record_tag_helper'
 gem 'open_uri_redirections'
@@ -30,6 +30,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
+gem 'pg', '~> 0.18'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
