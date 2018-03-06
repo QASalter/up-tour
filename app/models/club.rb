@@ -39,6 +39,8 @@ class Club < ApplicationRecord
         team.paid = count
       end
 
+      team.update(amount: csv_table.count) if team.amount != csv_table.count
+
       next if team.paid == count
       puts 'updated'
       team.update(paid: count)

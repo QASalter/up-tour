@@ -1,7 +1,7 @@
 class Team < ApplicationRecord
   belongs_to :club
   require 'csv'
-  
+
   def self.update_team
    clubs_hash = {
     "Beach Cricket"                                    => 1,
@@ -34,6 +34,8 @@ class Team < ApplicationRecord
         team.amount_left = person[6]
         team.club_id = clubs_hash[person[4]]
       end
+
+      team.update(club_id: clubs_hash[person[4]]) if team.club_id != clubs_hash[person[4]]
 
       next if team.amount_paid == person[5]
       puts 'updated'
